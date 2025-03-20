@@ -1,0 +1,47 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /hsbc
+
+spring:
+  application:
+    name: my-project
+  jackson:
+    time-zone: GMT+8
+    locale: zh_CN
+    date-format: yyyy-MM-dd HH:mm:ss
+  datasource:
+    schema: classpath:schema.sql
+    url: "jdbc:h2:mem:testdb"
+    driverClassName: org.h2.Driver
+    username: user
+    password: pass
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.dialect.H2Dialect
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+
+logging:
+  level:
+    root: INFO
+
+caffeine:
+  cache:
+    config:
+      maximumSize: 1000
+      expireAfterWriteSec: 15
+      initialCapacity: 10
+
+springdoc:
+  api-docs:
+    enabled: true
+    path: /v3/api-docs
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
