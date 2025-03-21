@@ -18,9 +18,8 @@ spring:
     password: pass
   jpa:
     show-sql: true
-    generate-ddl: true
     hibernate:
-      ddl-auto: update
+      ddl-auto: validate
       dialect: org.hibernate.dialect.H2Dialect
     database-platform: org.hibernate.dialect.H2Dialect
   h2:
